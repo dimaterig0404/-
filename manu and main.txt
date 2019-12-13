@@ -1,0 +1,91 @@
+from sposob import game
+import  random
+from color import out_red,out_yellow,out_blue,out_bur
+def rsp():
+    ene=random.randint(1,3)
+    for i in game:
+        out_red(i)
+    a=input('chose')
+    if a=='rok' and ene==1:
+        print('draw')
+        ene_wib = 'rok'
+    elif a == 'rok' and ene == 2:
+        print('win')
+        ene_wib = 'scissor'
+    elif a == 'rok' and ene == 3:
+        print('lose')
+        ene_wib = 'paper'
+
+
+    elif a=='scissor' and ene==2:
+        print('draw')
+        ene_wib = 'scissor'
+    elif a == 'scissor' and ene == 3:
+        print('win')
+        ene_wib = 'paper'
+    elif a == 'scissor' and ene == 1:
+        print('lose')
+        ene_wib = 'rok'
+
+
+    elif a=='paper' and ene==3:
+        print('draw')
+        ene_wib = 'paper'
+    elif a == 'paper' and ene == 1:
+        print('win')
+        ene_wib = 'rok'
+    elif a == 'paper' and ene == 2:
+        print('lose')
+        ene_wib='scissor'
+
+    print('the enemy showed',ene_wib)
+444444444444444444444444
+from map import pole
+from manu import rsp
+from pers import man
+from anamy import Vrag
+from anamy import Small_vrag
+from anamy import Big_vrag
+from anamy import Mid_vrag
+from coin import Coin
+from sposob import clas,level,Sposob,clas_an,level_an,Sposob_an,game
+from do import Do
+from color import out_red,out_yellow,out_blue,out_bur
+en1 = Vrag()
+#en3=Mid_vrag(clas_an,hard_an,Sposob_an)
+#en4=Big_vrag()
+map_1=pole()
+person=man(map_1.mas1)
+en2 = Small_vrag()
+coin_1=Coin(map_1.mas1,map_1.a)
+
+while True:
+    if person.do=='e':
+        out_bur( "you class:",  ),print(person.classication)
+        out_yellow('you name:'),print(person.name)
+        out_red('you hp:'),print(person.op0)
+        out_blue('you energy:'),print(person.op1)
+        print( ' ' )
+        out_bur( 'you enemy:'),print(en2.classication )
+        out_red( 'hp enemy:'),print(en2.hp_an )
+        out_blue( 'energy enemy:' ),print(en2.energia_an )
+        rop=input('continue y/n')
+        if rop=='y':
+            pass
+        else:
+            break
+    out_red('e')
+    map_1.print_mas()
+    person.move(map_1)
+    if person.x==en2.x and person.y==en2.y:
+        rsp()
+    en2.mav_an(map_1)
+    if en2.x==person.x and en2.y==person.y:
+        rsp()
+
+    Coin( map_1.mas1, map_1.a )
+
+    #print( 'win' )
+    #print( 'ты открыл чит код для этой игры 10 введи его когда будеш выберать классы' )
+    #print('ты прошел игру ',pers.name,'поздравляю ')
+    #print( 'ты открыл чит код для этой игры 0 введи его когда будеш выберать сложность' )
